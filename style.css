@@ -1,0 +1,61 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* taille logo */
+
+.logo img {
+    width: 50%;
+    height: 50%;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+/* nav */
+
+.navigation {
+    position: absolute;
+    word-spacing: 1em;
+    background-color:#F2F2F2;
+    font-size: 1.5em;
+    top: 0;
+    right: 0;
+    margin-right: 1.5em;
+    
+}
+
+/* .products {
+    display: flex;
+    justify-content: space-between;
+} */
+
+/* taille images nounours */
+
+.products img {
+    width: 25%;
+    height: 25%;
+}
+
+/* page */
+
+.content {
+    display: flex;
+    align-items: center;
+}
+
+/* Footer */
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+    background-color: #F2f2f2;
+    margin: 3em;
+    font-size: 1.2em;
+}
