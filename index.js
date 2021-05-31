@@ -4,7 +4,7 @@ async function fillProducts() {
       .then((nounours) => {
           for (let elem of nounours) {
             let products = document.getElementById('products')
-            let divWhole = document.createElement('div') 
+            let divWhole = document.createElement('div')
 
             // document.createElement va créer un élément HTML du type spécifié par (<tagName>)
 
@@ -16,7 +16,7 @@ async function fillProducts() {
             // Affichage du nom/prix des nounours
 
             let prix = document.createElement('p')
-            prix.innerText = elem.name + " coûte " + elem.price/100 + " € "
+            prix.innerText = elem.price/100 + " € "
 
             // Affichage des images
 
@@ -25,8 +25,8 @@ async function fillProducts() {
 
             // Affichage bouton "Voir le produit"
 
-            let button = document.createElement('p')
-            button.innerHTML = '<button><a href="">Voir le produit</a></button>'
+            let button = document.createElement('button')
+            button.innerHTML = '<a href="./produits.html?_id='+elem._id +'">Voir le produit</a>'
 
             // appendChild ajoute un noeud à la fin de la liste des enfants d'un noeud parent spécifié
 
