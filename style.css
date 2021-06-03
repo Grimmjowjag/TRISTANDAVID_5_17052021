@@ -15,9 +15,10 @@ body {
 /* taille logo */
 
 .logo img {
-    width: 60%;
+    display: flex;
+    width: 70%;
     justify-content: center;
-    padding-left: 8em;
+    margin: 0.5em auto;
 }
 
 /* Header */
@@ -31,12 +32,17 @@ header {
 /* nav */
 
 .navigation {
+    display: inline-block;
     position: absolute;
     font-size: 2em;
     top: 0;
     right: 0;
     margin: 2em;
     align-items: center;
+}
+
+.navigation:hover {
+    transform: scale(1.1);
 }
 
 /* page produits */
@@ -46,6 +52,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 0 8em 2em 8em;
 }
 
 .products > div > h1 {
@@ -72,7 +79,7 @@ header {
     margin: 1em 1em 1.5em 1em;
 }
 
-/* button */
+/* buttons */
 
 .products > div > button {
     width: 50%;
@@ -86,6 +93,10 @@ header {
     box-shadow: 4px -3px 21px 0px rgba(122, 122, 184, 0.75);
 }
 
+/* flèche retour */
+
+
+
 /* couleur et surlignement liens */
 
 a {
@@ -95,11 +106,12 @@ a {
 
 /* taille images nounours */
 
-.products img{
+.products img {
     width: 100%;
     height: 75%;
     margin-bottom: 1em;
     object-fit: cover;
+    border: 1px solid black;
     border-radius: 1em;
     box-shadow: 0.5em 0.5em 0.5em rgba(74,66,211,0.48);
 }
@@ -115,9 +127,9 @@ a {
 }
 
 .aboutus {
-    margin-left: 5em;
+    margin-left: 15em;
 }
 
 .contact {
-    margin-right: 5em;
+    margin-right: 15em;
 }

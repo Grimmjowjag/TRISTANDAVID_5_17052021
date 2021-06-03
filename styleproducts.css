@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'belligerent_madnessregular';
+    src: url('font/belligerent-webfont.woff2') format('woff2'),
+         url('font/belligerent-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'belligerent_madnessregular';
+    margin: 0;
+    padding: 0;
+}
+
+/* taille logo */
+
+.logo img {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    margin: 0.5em auto;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: #F3E9F1;
+}
+
+/* nav */
+
+.navigation {
+    position: absolute;
+    font-size: 2em;
+    top: 0;
+    right: 0;
+    margin: 2em;
+}
+
+.navigation:hover {
+    transform: scale(1.1);
+}
+
+/* page produits */
+
+/* couleur et surlignement liens */
+
+a {
+    text-decoration: none;
+    color: rgb(39, 82, 221);
+}
+
+/* taille images nounours */
+/* 
+    .products img{
+        width: 100%;
+        height: 75%;
+        margin-bottom: 1em;
+        object-fit: cover;
+        border: 2px solid black;
+        border-radius: 1em;
+        box-shadow: 0.5em 0.5em 0.5em rgba(74,66,211,0.48);
+    } */
+
+/* Footer */
+
+.infos {
+    display: flex;
+    padding: 1em;
+    justify-content: space-between;
+    background-color: #F3E9F1;
+    font-size: 1.4em;
+}
+
+.aboutus {
+    margin-left: 5em;
+}
+
+.contact {
+    margin-right: 5em;
+}
