@@ -25,20 +25,16 @@ body {
 
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #F3E9F1;
 }
 
 /* nav */
 
 .navigation {
-    display: inline-block;
-    position: absolute;
+    display: flex;
     font-size: 2em;
-    top: 0;
-    right: 0;
     margin: 2em;
-    align-items: center;
 }
 
 .navigation:hover {
@@ -51,8 +47,9 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 8em 2em 8em;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-bottom: 2em;
 }
 
 .products > div > h1 {
@@ -63,7 +60,8 @@ header {
 /* taille paragraphe */
 
 .products > div > p {
-    font-size: 20px;
+    font-size: 1.5em;
+    margin: 1em;
     font-weight: bold;
 }
 
@@ -74,17 +72,20 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 500px;
-    height: 500px;
+    width: 35em;
+    height: 35em;
     margin: 1em 1em 1.5em 1em;
 }
 
 /* buttons */
 
 .products > div > button {
+    display: flex;
+    justify-content: center;
     width: 50%;
     height: 3em;
-    font-size: 1.2em;
+    padding: 0.3em;
+    font-size: 1.5em;
     font-weight: bold;
     font-family: 'belligerent_madnessregular';
     margin-top: 1em;
@@ -93,13 +94,10 @@ header {
     box-shadow: 4px -3px 21px 0px rgba(122, 122, 184, 0.75);
 }
 
-/* flèche retour */
-
-
-
 /* couleur et surlignement liens */
 
 a {
+    display: flex;
     text-decoration: none;
     color: rgb(39, 82, 221);
 }
@@ -108,7 +106,8 @@ a {
 
 .products img {
     width: 100%;
-    height: 75%;
+    height: 100%;
+    margin-top: 1em;
     margin-bottom: 1em;
     object-fit: cover;
     border: 1px solid black;
@@ -121,15 +120,7 @@ a {
 .infos {
     display: flex;
     padding: 1em;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: #F3E9F1;
     font-size: 1.4em;
-}
-
-.aboutus {
-    margin-left: 15em;
-}
-
-.contact {
-    margin-right: 15em;
 }

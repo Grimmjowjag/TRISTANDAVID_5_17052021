@@ -52,18 +52,6 @@ a {
     color: rgb(39, 82, 221);
 }
 
-/* taille images nounours */
-/* 
-    .products img{
-        width: 100%;
-        height: 75%;
-        margin-bottom: 1em;
-        object-fit: cover;
-        border: 2px solid black;
-        border-radius: 1em;
-        box-shadow: 0.5em 0.5em 0.5em rgba(74,66,211,0.48);
-    } */
-
 /* Footer */
 
 .infos {
