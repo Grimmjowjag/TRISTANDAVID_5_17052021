@@ -16,7 +16,7 @@ async function fillProducts() {
             // Affichage du nom/prix des nounours
 
             let prix = document.createElement('p')
-            prix.innerText = elem.price/100 + " € "
+            prix.innerHTML = elem.price/100 + " € "
 
             // Affichage des images
 

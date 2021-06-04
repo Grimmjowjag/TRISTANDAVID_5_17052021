@@ -18,21 +18,28 @@ body {
     display: flex;
     width: 70%;
     justify-content: center;
-    margin: 0.5em auto;
+    margin-left: 4em;
 }
 
-/* Header */
+/* taille flèche retour */
+
+.back {
+    font-size: 1.5em;
+    color: black;
+}
+
+/* ---------------- Header ---------------- */
 
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #F3E9F1;
 }
 
 /* nav */
 
 .navigation {
-    position: absolute;
+    transition: transform 0.3s;
     font-size: 2em;
     top: 0;
     right: 0;
@@ -45,6 +52,58 @@ header {
 
 /* page produits */
 
+.select {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+}
+
+.boxSelect {
+    display: flex;
+    height: 9em;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 2em;
+}
+
+.SingleProd > img {
+    width: 700px;
+    height: 500px;
+    object-fit: cover;
+    margin: 1em;
+    border: 2px solid black;
+    border-radius: 2em;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    margin: 5em;
+}
+
+/* DEFINIR ASPECT BOUTON */
+#colors {
+    
+}
+
+/* Taille texte et nom */
+
+h2 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 20px;
+}
+
 /* couleur et surlignement liens */
 
 a {
@@ -54,12 +113,21 @@ a {
 
 /* Footer */
 
-.infos {
+footer {
     display: flex;
-    padding: 1em;
-    justify-content: space-between;
+    height: 15vh;
     background-color: #F3E9F1;
-    font-size: 1.4em;
+    align-items: center;
+}
+
+.infos {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.infos > p > a {
+    font-size: 1.5em;
 }
 
 .aboutus {

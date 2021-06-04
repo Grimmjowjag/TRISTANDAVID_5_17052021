@@ -5,18 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleproducts.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <script src="produits.js"></script>
     <title>Produits</title>
 </head>
 <body>
     <!-- HEADER -->
     <header>
-        <!-- <div class="back">
-            <a href="./index.html"><i class="fas fa-arrow-left"></i></a>">
-        </div> -->
+        <nav class="navigation">
+            <a href="./index.html"><i class="fas fa-arrow-left back"></i></a>
+        </nav>
+
         <div class="logo">
             <img src="./Images/Logo Orinoco.png" alt="Logo site Orinoco">
         </div>
+
         <nav class="navigation">
             <a href="#">Panier</a>
         </nav>
@@ -24,14 +27,40 @@
     <!-- HEADER -->
 
     <div class="content">
-        <div class="products" id="products"></div>
+        <div class="SingleProd" id="ImgProd"></div>
+        <div class="products">
+            <div id="products" class="select">
+                <div class="boxSelect">
+                    <select id="colors">
+                        <option value="">Choisissez une couleur</option>
+                    </select>
+    
+                    <select id="quantité">
+                        <option value="">Nombre de nounours</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button class="Panier">Ajouter au panier</button>
+        </div>
     </div>
 
     <!-- FOOTER -->
     <footer>
         <div class=infos>
-            <p class="aboutus">A propos de nous</p>
-            <p class="contact">Contact</p>
+            <p class="aboutus"><a href="">A propos de nous</a></p>
+            <p class="contact"><a href="mailto:contact@orinoco.com">Contact</a></p>
+        </div>
         </div>
     </footer>
     <!-- FOOTER -->
