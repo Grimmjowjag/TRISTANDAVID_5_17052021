@@ -56,6 +56,7 @@ header {
     display: flex;
     flex-direction: column-reverse;
     justify-content: space-between;
+    margin: 2em;
 }
 
 .boxSelect {
@@ -70,6 +71,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     width: 50%;
+    background-color: #F3E9F1;
     border: 1px solid black;
     border-radius: 2em;
 }
@@ -89,9 +91,39 @@ header {
     margin: 5em;
 }
 
-/* DEFINIR ASPECT BOUTON */
+/* ASPECT BOUTON */
 #colors {
-    
+    display: flex;
+    width: 25em;
+    border: 5px solid blue;
+    border-radius: 1em;
+    padding: 0.5em;
+    font-size: 1.2em;
+    font-family: 'belligerent_madnessregular';
+}
+
+.basket {
+    display: flex;
+    justify-content: center;
+}
+
+.Panier {
+    display: flex;
+    width: 25em;
+    transition: transform 0.3s;
+    border: 5px solid blue;
+    border-radius: 1em;
+    margin-top: 6em;
+    justify-content: center;
+    padding: 0.5em;
+    font-size: 1.5em;
+    font-family: 'belligerent_madnessregular';
+}
+
+.boxSelect {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
 }
 
 /* Taille texte et nom */

@@ -18,7 +18,14 @@ body {
     display: flex;
     width: 70%;
     justify-content: center;
-    margin: 0.5em auto;
+    margin-left: 4em;
+}
+
+/* taille flèche retour */
+
+.back {
+    font-size: 1.5em;
+    color: black;
 }
 
 /* Header */
@@ -32,8 +39,10 @@ header {
 /* nav */
 
 .navigation {
-    display: flex;
+    transition: transform 0.3s;
     font-size: 2em;
+    top: 0;
+    right: 0;
     margin: 2em;
 }
 
@@ -43,18 +52,43 @@ header {
 
 /* page produits */
 
-.products {
+.select {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    justify-content: space-evenly;
-    margin-bottom: 2em;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    margin: 2em;
 }
 
-.products > div > h1 {
-    margin-bottom: 0;
-    color: black ;
+.boxSelect {
+    display: flex;
+    height: 9em;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    background-color: #F3E9F1;
+    border: 1px solid black;
+    border-radius: 2em;
+}
+
+.SingleProd > img {
+    width: 700px;
+    height: 500px;
+    object-fit: cover;
+    margin: 1em;
+    border: 2px solid black;
+    border-radius: 2em;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    margin: 5em;
 }
 
 /* taille paragraphe */
@@ -65,53 +99,14 @@ header {
     font-weight: bold;
 }
 
-/* Cartes nounours */
-
-.products > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 35em;
-    margin: 1em 1em 1.5em 1em;
-}
-
 /* buttons */
 
-.products > div > button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 2.5em;
-    padding: 0.3em;
-    font-size: 1.5em;
-    font-weight: bold;
-    font-family: 'belligerent_madnessregular';
-    margin-top: 1em;
-    border-radius: 1em;
-    border: 2px solid black;
-    box-shadow: 4px -3px 21px 0px rgba(122, 122, 184, 0.75);
-}
 
 /* couleur et surlignement liens */
 
 a {
     text-decoration: none;
     color: rgb(39, 82, 221);
-}
-
-/* taille images nounours */
-
-.products img {
-    width: 600px;
-    height: 400px;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    object-fit: cover;
-    border: 1px solid black;
-    border-radius: 1em;
-    box-shadow: 0.5em 0.5em 0.5em rgba(74,66,211,0.48);
 }
 
 /* Footer */
