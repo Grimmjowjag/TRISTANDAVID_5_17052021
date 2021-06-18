@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="styleproducts.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <script src="produits.js"></script>
-    <title>Produits</title>
+    <title>Produits - Orinoco</title>
 </head>
 
 <body>
@@ -38,13 +37,25 @@
                         <option value="">Choisissez une couleur</option>
                     </select>
 
-                    <div class="basket">
-                        <button class="Panier">Ajouter au panier</button>
-                    </div>    
+                    <button onclick="localStorage.clear()">
+                        Vider panier
+                    </button>
+                    
+                    <!-- <button onclick="createPanier()">
+                        Créer panier
+                    </button>
+
+                    <button>
+                        Remplir panier
+                    </button> -->
+
+                    <!-- <div class="basket">
+                        <button class="Panier" onclick="addLocal()">Ajouter au panier</button>
+                    </div> -->   
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
 
         <!-- FOOTER -->
         <footer>
@@ -56,5 +67,5 @@
     </footer>
     <!-- FOOTER -->
 </body>
-
+<script src="produits.js"></script>
 </html>

@@ -1,4 +1,17 @@
- // Récupération URL pour récupérer ID du produit
+// function createPanier() {
+//   localStorage.setItem("panier", "coucou")
+// }
+
+// let panier = {
+//   Idteddy: [{color: "red", quantity: 2}, {color: "blue", quantity: 1}]
+// }
+
+// let panier2 = {
+//   IdNorbert: ["blue", "blue", "red"],
+//   IdAlfred: ["blue", "black"]
+// }
+
+// Récupération URL pour récupérer ID du produit
  let currentUrl = window.location.href;
 
  // ID du produit -> Split divise une chaîne de caract en liste de sous chaîne puis la place dans un tableau et retourne le tableau.
@@ -12,7 +25,7 @@ async function fillProducts() {
     .then((response) => response.json())
     .then((nounours) => {
       console.log(nounours)
-    
+
       // Division principale
 
       let divSingle = document.createElement('div')
@@ -21,6 +34,7 @@ async function fillProducts() {
       const ImgProd = document.getElementById('ImgProd')
       const produit = document.getElementById('products')
       const colors = document.getElementById('colors')
+      console.log(colors.options[colors.selectedIndex].text)
 
       // Création box img nounours
       let img = document.createElement('img')
@@ -55,10 +69,46 @@ async function fillProducts() {
 
       divSingle.appendChild(prix)
 
+      // Ajout produit au panier lors du clic sur bouton
+      
+      let btnPanier = document.createElement("button");
+      console.log(btnPanier)
+    
+      let btnPaniertext = document.createTextNode("Ajouter au panier");
+      
       // Ecriture dynamique des éléments du DOM
       produit.appendChild(divSingle)
+      btnPanier.setAttribute("class", "basket")
+      divSingle.appendChild(btnPanier)
+      btnPanier.appendChild(btnPaniertext)
 
+      // Ajout des informations du localstorage lors du click
+      btnPanier.onclick = function (){
+        let cart = []
+        let productName = nounours.name
+        let productInCart = window.localStorage.getItem(nounours._id)
+        let price = nounours.price/100 + " € "
+        let getColor = document.getElementsByTagName("select")[0]
+        let colorValue = getColor.value
+        let isintheCart = false
+        Object.keys(localStorage).forEach(Element => {
+          if (Element===nounours._id){
+            isintheCart = true
+            console.log("ok")
+          }
+        })
+        console.log(JSON.parse(productInCart)[0].color)
+
+        if (!productInCart) {
+          cart.push({name: productName, color: colorValue})
+          window.localStorage.setItem(nounours._id, JSON.stringify(cart))
+        }
+        else {
+          cart.push(productInfos)
+          cart.push(JSON.parse(productInCart))
+          window.localStorage.setItem("Commande", JSON.stringify(cart))
+        }
+      }
     })
     .catch(error => console.log(error))
 }
-

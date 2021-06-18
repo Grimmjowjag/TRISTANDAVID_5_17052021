@@ -76,7 +76,7 @@ header {
     border-radius: 2em;
 }
 
-.SingleProd > img {
+.Basket > img {
     width: 700px;
     height: 500px;
     object-fit: cover;
@@ -101,6 +101,39 @@ header {
 
 /* buttons */
 
+#quantité {
+    display: flex;
+    width: 25em;
+    border: 5px solid blue;
+    border-radius: 1em;
+    padding: 0.5em;
+    font-size: 1.2em;
+    font-family: 'belligerent_madnessregular';
+}
+
+.basket {
+    display: flex;
+    justify-content: center;
+}
+
+.valid {
+    display: flex;
+    width: 25em;
+    transition: transform 0.3s;
+    border: 5px solid blue;
+    border-radius: 1em;
+    margin-top: 6em;
+    justify-content: center;
+    padding: 0.5em;
+    font-size: 1.5em;
+    font-family: 'belligerent_madnessregular';
+}
+
+.boxSelect {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
 
 /* couleur et surlignement liens */
 
