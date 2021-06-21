@@ -97,6 +97,8 @@ async function fillProducts() {
             console.log("ok")
           }
         })
+        
+        // Commande
         console.log(JSON.parse(productInCart)[0].color)
 
         if (!productInCart) {
@@ -107,6 +109,19 @@ async function fillProducts() {
           cart.push(productInfos)
           cart.push(JSON.parse(productInCart))
           window.localStorage.setItem("Commande", JSON.stringify(cart))
+        }
+
+        // Couleurs
+        console.log(JSON.parse(colorValue)[0].colors)
+
+        if(!colorValue) {
+          cart.push({color: colorValue})
+          window.localStorage.setItem(nounours.colors, JSON.stringify(cart))
+        }
+        else {
+          cart.push(productInfos)
+          cart.push(JSON.parse(colorValue))
+          window.localStorage.setItem("Selection de la couleur", JSON.stringify(cart))
         }
       }
     })
