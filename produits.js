@@ -1,16 +1,3 @@
-// function createPanier() {
-//   localStorage.setItem("panier", "coucou")
-// }
-
-// let panier = {
-//   Idteddy: [{color: "red", quantity: 2}, {color: "blue", quantity: 1}]
-// }
-
-// let panier2 = {
-//   IdNorbert: ["blue", "blue", "red"],
-//   IdAlfred: ["blue", "black"]
-// }
-
 // Récupération URL pour récupérer ID du produit
  let currentUrl = window.location.href;
 
@@ -97,7 +84,7 @@ async function fillProducts() {
             console.log("ok")
           }
         })
-        
+
         // Commande
         console.log(JSON.parse(productInCart)[0].color)
 
@@ -121,7 +108,7 @@ async function fillProducts() {
         else {
           cart.push(productInfos)
           cart.push(JSON.parse(colorValue))
-          window.localStorage.setItem("Selection de la couleur", JSON.stringify(cart))
+          window.localStorage.setItem("Selection couleur", JSON.stringify(cart))
         }
       }
     })
