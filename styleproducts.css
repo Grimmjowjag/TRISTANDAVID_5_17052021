@@ -50,53 +50,42 @@ header {
 
 /* page produits */
 
-.select {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    margin: 2em;
-}
-
 .boxSelect {
     display: flex;
     height: 6em;
     justify-content: space-between;
     flex-direction: column;
     margin-top: 1em;
-    order: 1;
 }
 
-.products {
+#content {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: space-between;
-    width: 50%;
+    width: auto;
     background-color: #F3E9F1;
     border: 1px solid black;
     border-radius: 2em;
+    margin: 5em;
 }
 
-.SingleProd > img {
+/* dimension image */
+
+#content > div > img {
     width: 700px;
     height: 500px;
-    object-fit: cover;
     margin: 1em;
     border: 2px solid black;
     border-radius: 2em;
 }
 
-.content {
-    display: flex;
-    justify-content: space-around;
-    margin: 5em;
-}
-
-/* ASPECT BOUTON */
+/* ---------------- ASPECT BOUTON ---------------- */
 
 /* bouton select colors */
 #colors {
     display: flex;
     width: 25em;
+    margin: 1em;
     border: 5px solid blue;
     cursor: pointer;
     border-radius: 1em;
@@ -106,10 +95,11 @@ header {
 }
 
 /* bouton ajouter au panier */
-.basket {
+#content > div > button {
     display: flex;
     justify-content: center;
     width: 25em;
+    margin: 1em;
     cursor: pointer;
     transition: transform 0.3s;
     border: 5px solid blue;
@@ -124,10 +114,12 @@ header {
 
 h2 {
     font-size: 30px;
+    margin: 1em;
 }
 
 p {
     font-size: 24px;
+    margin: 1em;
 }
 
 /* couleur et surlignement liens */
@@ -137,22 +129,18 @@ a {
     color: rgb(39, 82, 221);
 }
 
-/* Footer */
+/* ---------------- Footer ---------------- */
 
 footer {
     display: flex;
     height: 15vh;
     background-color: #F3E9F1;
     align-items: center;
-}
-
-.infos {
     width: 100%;
-    display: flex;
     justify-content: space-between;
 }
 
-.infos > p > a {
+.footer > p > a {
     font-size: 1.5em;
 }
 

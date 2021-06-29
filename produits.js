@@ -14,12 +14,10 @@ async function fillProducts() {
       console.log(nounours)
 
       // Division principale
-
       let divSingle = document.createElement('div')
+      let content = document.getElementById('content')
 
       // Récup des éléments du DOM
-      const ImgProd = document.getElementById('ImgProd')
-      const produit = document.getElementById('products')
       const colors = document.getElementById('colors')
       console.log(colors.options[colors.selectedIndex].text)
 
@@ -27,7 +25,7 @@ async function fillProducts() {
       let img = document.createElement('img')
       img.src = nounours.imageUrl
 
-      ImgProd.appendChild(img)
+      divSingle.appendChild(img)
 
       // Création du nom h2 du nounours
       let name = document.createElement('h2')
@@ -64,10 +62,9 @@ async function fillProducts() {
       let btnPaniertext = document.createTextNode("Ajouter au panier");
       
       // Ecriture dynamique des éléments du DOM
-      produit.appendChild(divSingle)
-      btnPanier.setAttribute("class", "basket")
-      divSingle.appendChild(btnPanier)
       btnPanier.appendChild(btnPaniertext)
+      divSingle.appendChild(btnPanier)
+      content.appendChild(divSingle)
 
       // Ajout des informations du localstorage lors du click
       btnPanier.onclick = function (){
@@ -75,7 +72,7 @@ async function fillProducts() {
         let productName = nounours.name
         let productInCart = window.localStorage.getItem(nounours._id)
         let price = nounours.price/100 + " € "
-        let getColor = document.getElementsByTagName("select")[0]
+        let getColor = document.getElementsByTagName("colors")[0]
         let colorValue = getColor.value
         let isintheCart = false
         Object.keys(localStorage).forEach(Element => {
@@ -89,7 +86,7 @@ async function fillProducts() {
         console.log(JSON.parse(productInCart)[0].color)
 
         if (!productInCart) {
-          cart.push({name: productName, color: colorValue})
+          cart.push({name: productName, color: getColor})
           window.localStorage.setItem(nounours._id, JSON.stringify(cart))
         }
         else {
@@ -99,17 +96,7 @@ async function fillProducts() {
         }
 
         // Couleurs
-        console.log(JSON.parse(colorValue)[0].colors)
-
-        if(!colorValue) {
-          cart.push({color: colorValue})
-          window.localStorage.setItem(nounours.colors, JSON.stringify(cart))
-        }
-        else {
-          cart.push(productInfos)
-          cart.push(JSON.parse(colorValue))
-          window.localStorage.setItem("Selection couleur", JSON.stringify(cart))
-        }
+        // let pickedColors = getElementById("colors").value
       }
     })
     .catch(error => console.log(error))
