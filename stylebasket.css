@@ -52,6 +52,11 @@ header {
 
 /* page produits */
 
+form {
+    margin: 2em;
+    
+}
+
 .select {
     display: flex;
     flex-direction: column-reverse;
@@ -76,7 +81,7 @@ header {
     border-radius: 2em;
 }
 
-.Basket > img {
+.content > div > img {
     width: 300px;
     height: 300px;
     object-fit: cover;

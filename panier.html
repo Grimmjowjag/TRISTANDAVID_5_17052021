@@ -15,7 +15,7 @@
     <!-- HEADER -->
     <header>
         <nav class="navigation">
-            <a href="./produits.html"><i class="fas fa-arrow-left back"></i></a>
+            <a href="./index.html"><i class="fas fa-arrow-left back"></i></a>
         </nav>
 
         <div class="logo">
@@ -28,12 +28,29 @@
     </header>
     <!-- HEADER -->
 
-    <div class="content">
-        <div class="Cart" id="Cart"></div>
-        <div class="products">
-            <div id="products" class="select"></div>
+    <div class="content" id="content"></div>
+
+    <!-- ******* ne pas oublier le even.preventdefault onclick pour ne pas recharger la page ******* -->
+
+    <form action="" method="get">
+        <div class="form-example">
+          <label for="name">Enter your name: </label>
+          <!-- ajouter un "pattern pour éviter changements: nom -> ex: pas de nombres" -->
+          <input placeholder="" type="text" name="name" id="name" required>
         </div>
-    </div>
+
+        <div class="form-example">
+          <label for="email">Enter your email: </label>
+          <input placeholder="" type="email" name="email" id="email" required>
+        </div>
+
+        <div class="form-example">
+          <input placeholder="" type="submit" value="Subscribe!" id="">
+        </div>
+
+        <!-- Créer bouton valider commande à l'intérieur du form qui va éxécuter une action (preventdefault) + validation des inputs -->
+
+      </form>
 
     <!-- FOOTER -->
     <footer>

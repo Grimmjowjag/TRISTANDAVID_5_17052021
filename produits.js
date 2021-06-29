@@ -3,7 +3,6 @@
 
  // ID du produit -> Split divise une chaîne de caract en liste de sous chaîne puis la place dans un tableau et retourne le tableau.
  const urlId = currentUrl.split('_id=');
- console.log(urlId);
 
  fillProducts()
 
@@ -19,7 +18,6 @@ async function fillProducts() {
 
       // Récup des éléments du DOM
       const colors = document.getElementById('colors')
-      console.log(colors.options[colors.selectedIndex].text)
 
       // Création box img nounours
       let img = document.createElement('img')
@@ -65,15 +63,16 @@ async function fillProducts() {
       btnPanier.appendChild(btnPaniertext)
       divSingle.appendChild(btnPanier)
       content.appendChild(divSingle)
-
+      
+      // array vide
+      let cart = [] 
       // Ajout des informations du localstorage lors du click
       btnPanier.onclick = function (){
-        let cart = []
+  
         let productName = nounours.name
-        let productInCart = window.localStorage.getItem(nounours._id)
-        let price = nounours.price/100 + " € "
-        let getColor = document.getElementsByTagName("colors")[0]
-        let colorValue = getColor.value
+        let productInCart = window.localStorage.getItem("panier")
+        let getColor = document.getElementById('colors').value
+        console.log(getColor)
         let isintheCart = false
         Object.keys(localStorage).forEach(Element => {
           if (Element===nounours._id){
@@ -83,20 +82,17 @@ async function fillProducts() {
         })
 
         // Commande
-        console.log(JSON.parse(productInCart)[0].color)
-
+        // nous ajoutons les informations du nounours au localstorage (nom, couleur, id)...
         if (!productInCart) {
-          cart.push({name: productName, color: getColor})
-          window.localStorage.setItem(nounours._id, JSON.stringify(cart))
+          cart.push({name: productName, color: getColor, id: nounours._id}) 
+          window.localStorage.setItem("panier", JSON.stringify(cart))
         }
+        // puis, nous envoyons les données dans le localstorage lorsque le panier n'est pas vide
         else {
-          cart.push(productInfos)
-          cart.push(JSON.parse(productInCart))
-          window.localStorage.setItem("Commande", JSON.stringify(cart))
+          let getCart = JSON.parse(window.localStorage.getItem("panier"))
+          getCart.push({name: productName, color: getColor, id: nounours._id})
+          window.localStorage.setItem("panier", JSON.stringify(getCart))
         }
-
-        // Couleurs
-        // let pickedColors = getElementById("colors").value
       }
     })
     .catch(error => console.log(error))

@@ -1,70 +1,43 @@
-async function forEachProduct() {
-  await fetch('http://localhost:3000/api/teddies')
+let cart = JSON.parse(window.localStorage.getItem("panier"))
+console.log(cart)
+
+for(let elem of cart) {
+
+fetch('http://localhost:3000/api/teddies/' + elem.id)
     .then((response) => response.json())
     .then((nounours) => {
       console.log(nounours)
 
-    // Division principale
+      // Affichage image/nom/prix
+      let divCart = document.createElement('div')
+      let content = document.getElementById('content')
 
-    let divBasket = document.createElement('div')
+      // Création box img nounours
+      let img = document.createElement('img')
+      img.src = nounours.imageUrl
 
-    // Récup des éléments du DOM
-    const Cart = document.getElementById('Cart')
-    const produit = document.getElementById('products')
+      divCart.appendChild(img)
 
-    // Création box img nounours
-    let img = document.createElement('img')
-    img.src = nounours.imageUrl
+      // Création du nom h2 du nounours
+      let name = document.createElement('h2')
+      name.innerHTML = elem.name
 
-    Cart.appendChild(img)
+      divCart.appendChild(name)
 
-    // Création du nom h2 du nounours
-    let name = document.createElement('h2')
-    name.innerHTML = nounours.name
+      // Affichage du prix
+      let prix = document.createElement('p')
+      prix.innerText = "Prix : " + nounours.price/100 + " € "
 
-    divBasket.appendChild(name)
+      // Création choix couleur
 
-    // Création 'p' description du nounours
-    let description = document.createElement('p')
-    description.innerHTML = "Description : " + nounours.description
+      let pickedColor = document.createElement('p')
+      pickedColor.innerHTML = elem.color
 
-    divBasket.appendChild(description)
+      divCart.appendChild(pickedColor)
 
-    // Affichage du prix
-    let prix = document.createElement('p')
-    prix.innerText = "Prix : " + nounours.price/100 + " € "
+      // Ecriture dynamique des éléments du DOM
+      content.appendChild(divCart)
 
-    divBasket.appendChild(prix)
-
-    // Création bouton vider le panier
-    let btnviderPanier = document.createElement("button");
-    console.log(btnviderPanier)
-
-    let btnviderPaniertext = document.createTextNode("Vider le panier");
-
-    // Création du bouton valider la commande
-
-    let btnvalidOrder = document.createElement("button")
-    console.log(btnvalidOrder)
-
-    let btnvalidOrdertext = document.createTextNode("Valider la commande")
-
-    // Ecriture dynamique des éléments du DOM
-      produit.appendChild(divBasket)
-
-      // affichage du bouton "Vider le panier"
-      btnviderPanier.setAttribute("class", "clearbasket")
-      divBasket.appendChild(btnviderPanier)
-      btnviderPanier.appendChild(btnviderPaniertext)
-
-      // affichage du bouton "Valider la commande"
-      btnvalidOrder.setAttribute("class", "Order")
-      divBasket.appendChild(btnvalidOrder)
-      btnvalidOrder.appendChild(btnvalidOrdertext)
-  })
-
-  .catch(error => console.log(error))
+    })
 }
-
-forEachProduct() 
 
