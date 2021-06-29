@@ -52,19 +52,11 @@ async function fillProducts() {
 
       divSingle.appendChild(prix)
 
-      // Ajout produit au panier lors du clic sur bouton
-      
-      let btnPanier = document.createElement("button");
-      console.log(btnPanier)
-    
-      let btnPaniertext = document.createTextNode("Ajouter au panier");
-      
       // Ecriture dynamique des éléments du DOM
-      btnPanier.appendChild(btnPaniertext)
-      divSingle.appendChild(btnPanier)
       content.appendChild(divSingle)
-      
+
       // array vide
+      let btnPanier = document.getElementById("btnPanier")
       let cart = [] 
       // Ajout des informations du localstorage lors du click
       btnPanier.onclick = function (){

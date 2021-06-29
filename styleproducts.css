@@ -58,15 +58,20 @@ header {
     margin-top: 1em;
 }
 
-#content {
+.global {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: space-between;
     width: auto;
     background-color: #F3E9F1;
     border: 1px solid black;
     border-radius: 2em;
     margin: 5em;
+}
+
+#content {
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 /* dimension image */
@@ -85,7 +90,7 @@ header {
 #colors {
     display: flex;
     width: 25em;
-    margin: 1em;
+    margin: 1.5em;
     border: 5px solid blue;
     cursor: pointer;
     border-radius: 1em;
@@ -95,7 +100,8 @@ header {
 }
 
 /* bouton ajouter au panier */
-#content > div > button {
+
+#btnPanier {
     display: flex;
     justify-content: center;
     width: 25em;
@@ -103,8 +109,7 @@ header {
     cursor: pointer;
     transition: transform 0.3s;
     border: 5px solid blue;
-    border-radius: 1em;
-    margin-top: 3em;
+    border-radius: 1em; 
     padding: 0.5em;
     font-size: 1.5em;
     font-family: 'belligerent_madnessregular';
