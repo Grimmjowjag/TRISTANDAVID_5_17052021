@@ -37,7 +37,8 @@ fetch('http://localhost:3000/api/teddies/' + elem.id)
 
       // Ecriture dynamique des éléments du DOM
       content.appendChild(divCart)
-
     })
 }
+
+// PENSER A FAIRE BOUTON VIDER PANIER 
 

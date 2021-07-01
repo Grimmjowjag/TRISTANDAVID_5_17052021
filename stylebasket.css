@@ -28,7 +28,7 @@ body {
     color: black;
 }
 
-/* Header */
+/* ---------------- Header ---------------- */
 
 header {
     display: flex;
@@ -50,92 +50,105 @@ header {
     transform: scale(1.1);
 }
 
-/* page produits */
+/* ---------------- Page produits ---------------- */
 
-form {
-    margin: 2em;
-    
-}
-
-.select {
+.content {
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    margin: 2em;
-}
-
-.boxSelect {
-    display: flex;
-    height: 9em;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.products {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 5em;
+    width: auto;
+    max-width: 100%;
+    align-items: center;
     background-color: #F3E9F1;
     border: 1px solid black;
     border-radius: 2em;
+    text-align: center;
 }
 
 .content > div > img {
-    width: 300px;
-    height: 300px;
+    width: 70%;
+    max-width: 600px;
     object-fit: cover;
     margin: 1em;
     border: 2px solid black;
     border-radius: 2em;
 }
 
-.content {
+/* ---------------- Formulaire ---------------- */
+
+form {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    width: auto;
+    max-width: 100%;
+    align-items: center;
+    background-color: #F3E9F1;
+    border: 1px solid black;
+    border-radius: 2em;
     margin: 5em;
 }
-
-/* taille paragraphe */
-
-.products > div > p {
-    font-size: 1.5em;
+    
+form > .formbox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
     margin: 1em;
-    font-weight: bold;
 }
 
-/* buttons */
-
-.clearbasket {
+form > div > input {
     display: flex;
-    width: 25em;
+    border: 5px solid #F3E9F1;
+    border-radius: 1em;
+    margin: 1em;
+    padding: 1em;
+}
+
+form > div > label {
+    margin-top: 1em;
+    font-size: 20px;
+}
+
+/* ---------------- ASPECT BOUTON ---------------- */
+
+#clear {
+    display: flex;
+    width: 90%;
+    max-width: 400px;
     border: 5px solid blue;
     justify-content: center;
     cursor: pointer;
     border-radius: 1em;
+    margin: 2em;
     padding: 0.5em;
     font-size: 1.2em;
     font-family: 'belligerent_madnessregular';
 }
 
-.Order {
+#valid {
     display: flex;
-    width: 25em;
+    width: 90%;
+    max-width: 600px;
     cursor: pointer;
     transition: transform 0.3s;
     border: 5px solid blue;
     border-radius: 1em;
-    margin-top: 6em;
+    margin: 2em;
     justify-content: center;
     padding: 0.5em;
     font-size: 1.5em;
     font-family: 'belligerent_madnessregular';
 }
 
-.boxSelect {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1em;
+/* Taille texte et nom */
+
+h2 {
+    font-size: 25px;
+}
+
+p {
+    font-size: 24px;
 }
 
 /* couleur et surlignement liens */
@@ -145,23 +158,15 @@ a {
     color: rgb(39, 82, 221);
 }
 
-/* Footer */
+/* ---------------- Footer ---------------- */
 
 footer {
     display: flex;
     height: 15vh;
     background-color: #F3E9F1;
     align-items: center;
-}
-
-.infos {
     width: 100%;
-    display: flex;
     justify-content: space-between;
-}
-
-.infos > p > a {
-    font-size: 1.5em;
 }
 
 .aboutus {

@@ -17,6 +17,7 @@ body {
 .logo img {
     display: flex;
     width: 70%;
+    max-width: 800px;
     justify-content: center;
     margin-left: 4em;
 }
@@ -48,15 +49,7 @@ header {
     transform: scale(1.1);
 }
 
-/* page produits */
-
-.boxSelect {
-    display: flex;
-    height: 6em;
-    justify-content: space-between;
-    flex-direction: column;
-    margin-top: 1em;
-}
+/* ---------------- Page produits ---------------- */
 
 .global {
     display: flex;
@@ -77,8 +70,8 @@ header {
 /* dimension image */
 
 #content > div > img {
-    width: 700px;
-    height: 500px;
+    width: 90%;
+    max-width: 800px;
     margin: 1em;
     border: 2px solid black;
     border-radius: 2em;
@@ -87,9 +80,11 @@ header {
 /* ---------------- ASPECT BOUTON ---------------- */
 
 /* bouton select colors */
+
 #colors {
     display: flex;
-    width: 25em;
+    width: 90%;
+    max-width: 300px;
     margin: 1.5em;
     border: 5px solid blue;
     cursor: pointer;
@@ -104,7 +99,8 @@ header {
 #btnPanier {
     display: flex;
     justify-content: center;
-    width: 25em;
+    width: 90%;
+    max-width: 500px;
     margin: 1em;
     cursor: pointer;
     transition: transform 0.3s;
@@ -118,7 +114,7 @@ header {
 /* Taille texte et nom */
 
 h2 {
-    font-size: 30px;
+    font-size: 25px;
     margin: 1em;
 }
 
@@ -143,10 +139,6 @@ footer {
     align-items: center;
     width: 100%;
     justify-content: space-between;
-}
-
-.footer > p > a {
-    font-size: 1.5em;
 }
 
 .aboutus {

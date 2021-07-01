@@ -64,19 +64,11 @@ async function fillProducts() {
         let productName = nounours.name
         let productInCart = window.localStorage.getItem("panier")
         let getColor = document.getElementById('colors').value
-        console.log(getColor)
-        let isintheCart = false
-        Object.keys(localStorage).forEach(Element => {
-          if (Element===nounours._id){
-            isintheCart = true
-            console.log("ok")
-          }
-        })
 
         // Commande
         // nous ajoutons les informations du nounours au localstorage (nom, couleur, id)...
         if (!productInCart) {
-          cart.push({name: productName, color: getColor, id: nounours._id}) 
+          cart.push({name: productName, color: getColor, id: nounours._id})
           window.localStorage.setItem("panier", JSON.stringify(cart))
         }
         // puis, nous envoyons les données dans le localstorage lorsque le panier n'est pas vide
