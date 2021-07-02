@@ -30,13 +30,13 @@
 
     <div class="content" id="content"></div>
 
-    <!-- ******* ne pas oublier le even.preventdefault onclick pour ne pas recharger la page ******* -->
+    <!-- ******* ne pas oublier le event.preventdefault onclick pour ne pas recharger la page ******* -->
 
     <form action="" method="get">
         <div class="formbox">
-            <label for="name">Nom, prénom:</label>
+            <label for="name">Prénom, Nom:</label>
             <!-- ajouter un "pattern pour éviter changements: nom -> ex: pas de nombres" -->
-            <input placeholder="Nom prénom" type="text" name="name" id="name" required>
+            <input placeholder="Prénom Nom" type="text" name="name" id="name" required>
         </div>
 
         <div class="formbox">
@@ -55,6 +55,7 @@
         </div>
 
         <button id="clear">Vider le panier</button>
+        <!-- Faire localStorage.clear(); JS -->
 
         <button id="valid">Valider la commande</button>
 

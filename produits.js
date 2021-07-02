@@ -25,18 +25,6 @@ async function fillProducts() {
 
       divSingle.appendChild(img)
 
-      // Création du nom h2 du nounours
-      let name = document.createElement('h2')
-      name.innerHTML = nounours.name
-
-      divSingle.appendChild(name)
-
-      // Création 'p' description du nounours
-      let description = document.createElement('p')
-      description.innerHTML = "Description : " + nounours.description
-
-      divSingle.appendChild(description)
-
       // Création options couleurs
       for (let couleur of nounours.colors){
         let option = document.createElement('option')
@@ -46,19 +34,38 @@ async function fillProducts() {
         colors.appendChild(option)
       }
 
+      // DIV TEXT
+      let divText = document.createElement('div')
+      divText.setAttribute("class", "divText")
+
+      // Création du nom h2 du nounours
+      let name = document.createElement('h2')
+      name.innerHTML = nounours.name
+
+      divText.appendChild(name)
+
       // Affichage du prix
       let prix = document.createElement('p')
       prix.innerText = "Prix : " + nounours.price/100 + " € "
 
-      divSingle.appendChild(prix)
+      divText.appendChild(prix)
+
+      // Création 'p' description du nounours
+      let description = document.createElement('p')
+      description.innerHTML = "Description : " + nounours.description
+
+      divText.appendChild(description)
 
       // Ecriture dynamique des éléments du DOM
+      content.appendChild(divText)
       content.appendChild(divSingle)
 
+      // ------------------ Ajout des informations du localstorage lors du click ------------------
+      
       // array vide
       let btnPanier = document.getElementById("btnPanier")
       let cart = [] 
-      // Ajout des informations du localstorage lors du click
+      // Fonction du bouton btnPanier lors du click
       btnPanier.onclick = function (){
   
         let productName = nounours.name

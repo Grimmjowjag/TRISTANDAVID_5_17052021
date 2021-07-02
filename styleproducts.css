@@ -67,6 +67,13 @@ header {
     flex-direction: column-reverse;
 }
 
+.divText {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 800px;
+}
+
 /* dimension image */
 
 #content > div > img {

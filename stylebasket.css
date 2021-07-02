@@ -54,7 +54,7 @@ header {
 
 .content {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-evenly;
     margin: 5em;
     width: auto;
@@ -73,6 +73,16 @@ header {
     margin: 1em;
     border: 2px solid black;
     border-radius: 2em;
+}
+
+.divText {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: normal;
+    flex-direction: column;
+    width: 30%;
+    max-width: 10em;
 }
 
 /* ---------------- Formulaire ---------------- */
