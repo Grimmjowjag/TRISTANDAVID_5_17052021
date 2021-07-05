@@ -30,8 +30,6 @@
 
     <div class="content" id="content"></div>
 
-    <!-- ******* ne pas oublier le event.preventdefault onclick pour ne pas recharger la page ******* -->
-
     <form action="" method="get">
         <div class="formbox">
             <label for="name">Prénom, Nom:</label>
@@ -40,13 +38,13 @@
         </div>
 
         <div class="formbox">
-            <label for="email">Adresse :</label>
-            <input placeholder="Adresse postale" type="email" name="email" id="email" required>
+            <label for="adress">Adresse :</label>
+            <input placeholder="Adresse postale" type="text" name="adress" id="adress" required>
         </div>
 
         <div class="formbox">
-            <label for="email">Ville :</label>
-            <input placeholder="ex : Paris" type="email" name="email" id="email" required>
+            <label for="location">Ville :</label>
+            <input placeholder="ex : Paris" type="text" name="location" id="location" required>
         </div>
 
         <div class="formbox">
@@ -57,7 +55,7 @@
         <button id="clear">Vider le panier</button>
         <!-- Faire localStorage.clear(); JS -->
 
-        <button id="valid">Valider la commande</button>
+        <button id="valid" type="submit">Valider la commande</button>
 
         <!-- Créer bouton valider commande à l'intérieur du form qui va éxécuter une action (preventdefault) + validation des inputs -->
 
