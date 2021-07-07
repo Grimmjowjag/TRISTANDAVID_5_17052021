@@ -14,11 +14,19 @@ body {
 
 /* taille logo */
 
+.logo {
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+}
+
 .logo img {
     display: flex;
     width: 70%;
-    justify-content: center;
-    margin-left: 4em;
+    max-width: 800px;
+    margin: auto;
+    padding: 1em;
 }
 
 /* taille flèche retour */
@@ -40,10 +48,10 @@ header {
 
 .navigation {
     transition: transform 0.3s;
+    display: flex;
     font-size: 2em;
-    top: 0;
-    right: 0;
-    margin: 2em;
+    align-items: center;
+    padding: 0.5em;
 }
 
 .navigation:hover {
@@ -56,7 +64,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin: 5em;
+    margin: 2em;
     width: auto;
     max-width: 100%;
     align-items: center;
@@ -96,7 +104,7 @@ form {
     background-color: #F3E9F1;
     border: 1px solid black;
     border-radius: 2em;
-    margin: 5em;
+    margin: 2em;
 }
     
 form > .formbox {
@@ -118,6 +126,7 @@ form > div > input {
 form > div > label {
     margin-top: 1em;
     font-size: 20px;
+    padding: 1em;
 }
 
 /* ---------------- ASPECT BOUTON ---------------- */
@@ -157,7 +166,7 @@ h2 {
     font-size: 25px;
 }
 
-p {
+.divText {
     font-size: 24px;
 }
 
@@ -172,17 +181,22 @@ a {
 
 footer {
     display: flex;
-    height: 15vh;
     background-color: #F3E9F1;
     align-items: center;
     width: 100%;
     justify-content: space-between;
 }
 
+footer > p > a {
+    font-size: 1.5em;
+}
+
 .aboutus {
     margin-left: 5em;
+    padding: 2em;
 }
 
 .contact {
     margin-right: 5em;
+    padding: 2em;
 }

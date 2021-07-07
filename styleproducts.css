@@ -14,12 +14,19 @@ body {
 
 /* taille logo */
 
+.logo {
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+}
+
 .logo img {
     display: flex;
     width: 70%;
     max-width: 800px;
-    justify-content: center;
-    margin-left: 4em;
+    margin: auto;
+    padding: 1em;
 }
 
 /* taille flèche retour */
@@ -41,8 +48,10 @@ header {
 
 .navigation {
     transition: transform 0.3s;
+    display: flex;
     font-size: 2em;
-    margin: 2em;
+    align-items: center;
+    padding: 0.5em;
 }
 
 .navigation:hover {
@@ -56,10 +65,11 @@ header {
     flex-direction: column;
     justify-content: space-between;
     width: auto;
+    max-width: 100%;
     background-color: #F3E9F1;
     border: 1px solid black;
     border-radius: 2em;
-    margin: 5em;
+    margin: 2em;
 }
 
 #content {
@@ -72,6 +82,11 @@ header {
     flex-direction: column;
     width: 90%;
     max-width: 800px;
+}
+
+.divText > p {
+    font-size: 24px;
+    margin: 1em;
 }
 
 /* dimension image */
@@ -90,7 +105,7 @@ header {
 
 #colors {
     display: flex;
-    width: 90%;
+    width: 80%;
     max-width: 300px;
     margin: 1.5em;
     border: 5px solid blue;
@@ -106,7 +121,7 @@ header {
 #btnPanier {
     display: flex;
     justify-content: center;
-    width: 90%;
+    width: 85%;
     max-width: 500px;
     margin: 1em;
     cursor: pointer;
@@ -125,11 +140,6 @@ h2 {
     margin: 1em;
 }
 
-p {
-    font-size: 24px;
-    margin: 1em;
-}
-
 /* couleur et surlignement liens */
 
 a {
@@ -141,17 +151,22 @@ a {
 
 footer {
     display: flex;
-    height: 15vh;
+    width: 100%;
     background-color: #F3E9F1;
     align-items: center;
-    width: 100%;
     justify-content: space-between;
+}
+
+footer > p > a {
+    font-size: 1.5em;
 }
 
 .aboutus {
     margin-left: 5em;
+    padding: 2em;
 }
 
 .contact {
     margin-right: 5em;
+    padding: 2em;
 }
