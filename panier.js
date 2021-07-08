@@ -1,6 +1,13 @@
+let products = []
+let prixPanier = 0
+
 // Recherche des informations des produits ajoutés dans le localstorage
 let cart = JSON.parse(window.localStorage.getItem("panier"))
 console.log(cart)
+
+// ------------ Affichage du prix total dans le panier ------------
+
+function afficherPanier() {
 
 for(let elem of cart) {
 
@@ -42,29 +49,29 @@ fetch('http://localhost:3000/api/teddies/' + elem.id)
 
       divText.appendChild(prix)
 
-      // ------------ Affichage du prix total dans le panier ------------
-      // let prixTotal = []
+      // Stockage id dans le tableau products
+      products.push(elem.id)
 
-      // Aller chercher les prix dans le panier 
-      // for (let price = 0; price < nounours.length; price++){
-      //   let prixPanier = nounours[price].prix
-      //   console.log(prixPanier)
-
-        // Mettre les prix du panier dans la variable "prixTotal"
-      //   prixTotal.push(prixPanier)
-      //   console.log(prixTotal)
-      // }
-
-        // Additioner les prix qu'il y a dans le tableau de la variable "prixTotal"
-        // const reducer = (accumulator, currentValue) => accumulator + currentValue
-        // const prixGlobal = prixTotal.reduce(reducer)
-        // console.log(prixGlobal)
-
+      //  Stockage du prix total 
+      prixPanier += prixPanier + nounours.price
+      
       // Ecriture dynamique des éléments du DOM
       content.appendChild(divCart)
       content.appendChild(divText)
     })
+    console.log(prixPanier/1000)
 }
+// ------------ Affichage du prix total ------------
+let divPrixTotal = document.getElementById('prixTotal')
+
+let prixTotal = document.createElement('p')
+prixTotal.innerText = `Prix total de la commande : ${prixPanier/1000}`
+
+divPrixTotal.appendChild(prixTotal)
+console.log(prixPanier/1000)
+}
+
+afficherPanier()
 
 // ------------ Fonction du bouton vider le panier ------------
 clear.onclick = function (){
@@ -85,8 +92,8 @@ const btnvalid = document.querySelector("#valid")
 btnvalid.addEventListener("click", (e)=>{
   e.preventDefault()
 
-// Récupération des valeurs du formulaire pour les mettre dans le local storage 
-localStorage.setItem("name", "adress", "location", "email", document.querySelector("#name", "#adress", "#location", "#email").value)
+// Récupération des valeurs du formulaire pour les mettre dans le local storage
+// localStorage.setItem("name", "adress", "location", "email", document.querySelector("#name", "#adress", "#location", "#email").value)
 
 // Alerte si champ renseigné non correct
 let erreur
@@ -107,19 +114,21 @@ let erreur
     alert("Formulaire envoyé !")  // Sinon, afficher "Formulaire envoyé !"
   }
 
-console.log(document.querySelector("#name").value)
+console.log(document.querySelector("#firstname").value)
+console.log(document.querySelector("#lastname").value)
 console.log(document.querySelector("#adress").value)
 console.log(document.querySelector("#location").value)
 console.log(document.querySelector("#email").value)
 
 // Mettre les values du formulaire dans un objet
-const form = {
-  name: localStorage.getItem("name"),
-  adress: localStorage.getItem("adress"),
-  location: localStorage.getItem("location"),
-  email: localStorage.getItem("email")
+const contact = {
+  firstname: document.querySelector("#firstname").value,
+  lastname: document.querySelector("#lastname").value,
+  address: document.querySelector("#adress").value,
+  city: document.querySelector("#location").value,
+  email: document.querySelector("#email").value
 }
-console.log(form)
+console.log(contact, products)
 
 // Mettre les values du formulaire et mettre les produits sélectionnés dans un objet à envoyer vers le serveur
 const send = {

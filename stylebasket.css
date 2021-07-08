@@ -93,6 +93,14 @@ header {
     max-width: 10em;
 }
 
+/* Prix total */
+
+#prixTotal {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
 /* ---------------- Formulaire ---------------- */
 
 form {

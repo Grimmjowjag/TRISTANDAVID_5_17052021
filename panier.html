@@ -30,11 +30,18 @@
 
     <div class="content" id="content"></div>
 
+    <div id="prixTotal"></div>
+
     <form id="submit" action="" method="get">
         <div class="formbox">
-            <label for="name">Prénom, Nom:</label>
+            <label for="firstname">Prénom :</label>
             <!-- ajouter un "pattern pour éviter changements: nom -> ex: pas de nombres" -->
-            <input placeholder="Prénom Nom" type="text" name="name" id="name" required>
+            <input placeholder="Prénom" type="text" name="firstname" id="firstname" required>
+        </div>
+
+        <div class="formbox">
+            <label for="lastname">Nom :</label>
+            <input placeholder="Nom" type="text" name="lastname" id="lastname" required>
         </div>
 
         <div class="formbox">
