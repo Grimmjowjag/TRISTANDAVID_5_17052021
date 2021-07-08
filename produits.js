@@ -66,24 +66,29 @@ async function fillProducts() {
       let btnPanier = document.getElementById("btnPanier")
       let cart = [] 
       // Fonction du bouton btnPanier lors du click
-      btnPanier.onclick = function (){
-        alert("Produit ajouté au panier !")
-  
-        let productName = nounours.name
-        let productInCart = window.localStorage.getItem("panier")
+      btnPanier.onclick = function () {
         let getColor = document.getElementById('colors').value
 
-        // Commande
-        // nous ajoutons les informations du nounours au localstorage (nom, couleur, id)...
-        if (!productInCart) {
-          cart.push({name: productName, color: getColor, id: nounours._id})
-          window.localStorage.setItem("panier", JSON.stringify(cart))
-        }
-        // puis, nous envoyons les données dans le localstorage lorsque le panier n'est pas vide
-        else {
-          let getCart = JSON.parse(window.localStorage.getItem("panier"))
-          getCart.push({name: productName, color: getColor, id: nounours._id})
-          window.localStorage.setItem("panier", JSON.stringify(getCart))
+        if (getColor) {
+          alert("Produit ajouté au panier !")
+
+          let productName = nounours.name
+          let productInCart = window.localStorage.getItem("panier")
+
+          // Commande
+          // nous ajoutons les informations du nounours au localstorage (nom, couleur, id, prix, img)...
+          if (!productInCart) {
+            cart.push({name: productName, color: getColor, id: nounours._id, price: nounours.price, imageUrl: nounours.imageUrl})
+            window.localStorage.setItem("panier", JSON.stringify(cart))
+          }
+          // puis, nous envoyons les données dans le localstorage lorsque le panier n'est pas vide
+          else {
+            let getCart = JSON.parse(window.localStorage.getItem("panier"))
+            getCart.push({name: productName, color: getColor, id: nounours._id, price: nounours.price, imageUrl: nounours.imageUrl})
+            window.localStorage.setItem("panier", JSON.stringify(getCart))
+          }
+        } else {
+          alert('Veuillez choisir une couleur')
         }
       }
     })

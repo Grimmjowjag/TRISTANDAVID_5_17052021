@@ -1,0 +1,1 @@
+// Afficher OrderId et prix total + message remerciement
