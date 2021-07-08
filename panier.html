@@ -30,7 +30,7 @@
 
     <div class="content" id="content"></div>
 
-    <form action="" method="get">
+    <form id="submit" action="" method="get">
         <div class="formbox">
             <label for="name">Prénom, Nom:</label>
             <!-- ajouter un "pattern pour éviter changements: nom -> ex: pas de nombres" -->
@@ -56,6 +56,8 @@
         <!-- Faire localStorage.clear(); JS -->
 
         <button id="valid" type="submit">Valider la commande</button>
+
+        <p style="color: red;" id="erreur "></p>
 
         <!-- Créer bouton valider commande à l'intérieur du form qui va éxécuter une action (preventdefault) + validation des inputs -->
 

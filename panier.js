@@ -85,8 +85,27 @@ const btnvalid = document.querySelector("#valid")
 btnvalid.addEventListener("click", (e)=>{
   e.preventDefault()
 
-// Récupération des valeurs du formulaire pour les mettre dans le local storage
+// Récupération des valeurs du formulaire pour les mettre dans le local storage 
 localStorage.setItem("name", "adress", "location", "email", document.querySelector("#name", "#adress", "#location", "#email").value)
+
+// Alerte si champ renseigné non correct
+let erreur
+  // Traitement générique
+  let inputs = document.getElementById("submit").getElementsByTagName("input")
+    for (let i = 0; i < inputs.length; i++) {
+      if (!inputs[i].value) {
+        erreur = "Veuillez renseigner tous les champs"
+      }
+    }
+
+  if (erreur) {
+    e.preventDefault()
+    document.getElementById("erreur").innerHTML = erreur  // Si il y a un problème, afficher un message d'erreur...
+    return false
+  } 
+  else {
+    alert("Formulaire envoyé !")  // Sinon, afficher "Formulaire envoyé !"
+  }
 
 console.log(document.querySelector("#name").value)
 console.log(document.querySelector("#adress").value)

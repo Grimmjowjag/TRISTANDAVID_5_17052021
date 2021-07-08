@@ -67,6 +67,7 @@ async function fillProducts() {
       let cart = [] 
       // Fonction du bouton btnPanier lors du click
       btnPanier.onclick = function (){
+        alert("Produit ajouté au panier !")
   
         let productName = nounours.name
         let productInCart = window.localStorage.getItem("panier")
