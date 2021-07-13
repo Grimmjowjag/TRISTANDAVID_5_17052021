@@ -13,8 +13,8 @@ if (cart === null) {  // Si le panier est vide, afficher qu'il est vide
   window.location.href = "index.html"
 } 
 else {  // Sinon, afficher le panier + le prix total de la commande
-  cart.forEach(nounours => { afficherPanier(nounours) })
-  cart.forEach(nounours => { calculerPrixTotal(nounours) })
+  cart.forEach(nounours => {afficherPanier(nounours)})
+  cart.forEach(nounours => {calculerPrixTotal(nounours)})
   let divPrix = document.getElementById('prixTotal')
   divPrix.innerText = `Prix total de la commande: ${prixPanier/100} €`
 }
@@ -90,24 +90,27 @@ btnvalid.addEventListener("click", (e)=>{
 // Alerte si champ renseigné non correct
 let erreur
   // Traitement générique
+  // Nous allons chercher les balises "input" du formulaire ayant pour id "submit"
   let inputs = document.getElementById("submit").getElementsByTagName("input")
     for (let i = 0; i < inputs.length; i++) {
       if (!inputs[i].value) {
+        // si les informations des inputs sont incorrectes, affichage d'une erreur
         erreur = "Veuillez renseigner tous les champs"
       }
     }
 
   if (erreur) {
-    e.preventDefault()
     document.getElementById("erreur").innerHTML = erreur  // Si il y a un problème, afficher un message d'erreur...
     return false
-  } 
+  }
 
 console.log(document.querySelector("#firstname").value)
 console.log(document.querySelector("#lastname").value)
 console.log(document.querySelector("#adress").value)
 console.log(document.querySelector("#location").value)
 console.log(document.querySelector("#email").value)
+
+// ------------ Requête POST ------------
 
 // Mettre les values du formulaire dans un objet
 const contact = {
@@ -137,8 +140,18 @@ fetch("http://localhost:3000/api/teddies/order", {
   .then((responseParsed) => {
     console.log(responseParsed.orderId)
     localStorage.clear()
+
+    let orderId = responseParsed.orderId
+
+    let orderInfo = []
+
+    orderInfo.push(orderId, prixPanier)
+    localStorage.setItem("orderInfo", JSON.stringify(orderInfo))
+    window.location.replace("http://127.0.0.1:5500/order.html")
   })
   .catch((error) => {
     console.log(error)
   })
 })
+
+// ------------ FIN REQUETE POST ------------
