@@ -31,6 +31,7 @@ function afficherPanier() {
     // Vider le localstorage pour la sécurité de l'utilisateur
     localStorage.clear()
     }
+    // Sinon, retour à la page d'accueil
     else {
         window.location.href="index.html"
     }

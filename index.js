@@ -2,6 +2,7 @@ async function fillProducts() {
     await fetch('http://localhost:3000/api/teddies')
       .then((response) => response.json())
       .then((nounours) => {
+        // console.log(nounours)
           for (let elem of nounours) {
             let products = document.getElementById('products')
             let divWhole = document.createElement('div')
