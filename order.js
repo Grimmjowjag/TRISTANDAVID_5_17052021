@@ -2,7 +2,7 @@
 let getorderInfo = JSON.parse(window.localStorage.getItem("orderInfo"))
 console.log(getorderInfo)
 
-function afficherPanier() {
+function afficherOrder() {
     
     if(getorderInfo) {
 
@@ -37,5 +37,5 @@ function afficherPanier() {
     }
 }
 
-afficherPanier()
+afficherOrder()
 
