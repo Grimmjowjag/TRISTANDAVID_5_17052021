@@ -110,6 +110,10 @@ console.log(document.querySelector("#adress").value)
 console.log(document.querySelector("#location").value)
 console.log(document.querySelector("#email").value)
 
+// Déclaration RegEx
+
+const regExEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$/
+
 // ------------ Requête POST ------------
 
 // Mettre les values du formulaire dans un objet
@@ -121,6 +125,11 @@ const contact = {
   email: document.querySelector("#email").value
 }
 console.log(contact, products)
+
+if (regExEmail.test(contact.email) == false ){
+  alert("Veuillez renseigner correctement votre adresse email")
+  return false
+}
 
 // Payload du formulaire et des produits à envoyer 
 const toPost = {contact, products}
