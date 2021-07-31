@@ -113,6 +113,8 @@ console.log(document.querySelector("#email").value)
 // Déclaration RegEx
 
 const regExEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$/
+const regExLocation = /^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$/
+const regExName = /^[a-z ,.'-]+$/i
 
 // ------------ Requête POST ------------
 
@@ -126,8 +128,8 @@ const contact = {
 }
 console.log(contact, products)
 
-if (regExEmail.test(contact.email) == false ){
-  alert("Veuillez renseigner correctement votre adresse email")
+if (regExEmail.test(contact.email) == false || regExLocation.test(contact.location) == false || regExName.test(contact.firstName) == false || regExName.test(contact.lastName) == false ){
+  alert("Veuillez renseigner correctement les champs requis afin de valider votre commande")
   return false
 }
 
@@ -139,12 +141,12 @@ fetch("http://localhost:3000/api/teddies/order", {
   method: "POST",
   // Sécurisation des requêtes front/back avec les headers 
   headers: {
-    // le contenu de la requête sera du JSON
+    // on précise les données envoyées au serveur
     "Content-Type": "application/json; charset=utf-8"
   },
   body: JSON.stringify(toPost)
 })
-  // et nous renvoie la réponse de la requête (orderId)
+  // réponse de la requête (orderId)
   .then((response) => response.json())
   .then((responseParsed) => {
     console.log(responseParsed.orderId)
@@ -156,7 +158,7 @@ fetch("http://localhost:3000/api/teddies/order", {
 
     orderInfo.push(orderId, prixPanier)
     localStorage.setItem("orderInfo", JSON.stringify(orderInfo))
-    window.location.replace("http://127.0.0.1:5500/order.html")
+    window.location.assign("http://127.0.0.1:5500/order.html")
   })
   .catch((error) => {
     console.log(error)
